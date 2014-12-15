@@ -1,0 +1,15 @@
+<metadata>
+  <remove-node path="/api/package[starts-with(@name, 'com.almeros.android.')]" />
+  <remove-node path="/api/package[@name='uk.co.senab.bitmapcache']/class[@name='CacheableBitmapDrawable.CheckStateRunnable']"  />
+  <remove-node path="/api/package[@name='com.mapbox.mapboxsdk.tileprovider']/class[@name='MapTileCache']/method[@name='decodeBitmap' and count(parameter)=2 and parameter[1][@type='uk.co.senab.bitmapcache.BitmapLruCache.InputStreamProvider'] and parameter[2][@type='android.graphics.BitmapFactory.Options']]"  />
+  <remove-node path="/api/package[@name='uk.co.senab.bitmapcache']/class[@name='CacheableBitmapDrawable']/constructor[@name='CacheableBitmapDrawable' and count(parameter)=5 and parameter[1][@type='java.lang.String'] and parameter[2][@type='android.content.res.Resources'] and parameter[3][@type='android.graphics.Bitmap'] and parameter[4][@type='uk.co.senab.bitmapcache.BitmapLruCache.RecyclePolicy'] and parameter[5][@type='int']]"/>
+  <remove-node path="/api/package[@name='com.mapbox.mapboxsdk.views.safecanvas']/interface[@name='ISafeCanvas']/method[@name='drawColor' and count(parameter)=1 and parameter[1][@type='int']]"/>
+  <remove-node path="/api/package[@name='com.mapbox.mapboxsdk.views.safecanvas']/interface[@name='ISafeCanvas']/method[@name='drawColor' and count(parameter)=2 and parameter[1][@type='int'] and parameter[2][@type='android.graphics.PorterDuff.Mode']]" />
+  <remove-node path="/api/package[@name='com.mapbox.mapboxsdk.views.safecanvas']/interface[@name='ISafeCanvas']/method[@name='save' and count(parameter)=1 and parameter[1][@type='int']]"/>
+  <remove-node path="/api/package[@name='com.mapbox.mapboxsdk.overlay']/class[@name='TilesOverlay.ZoomInTileLooper']"/>
+  <remove-node path="/api/package[@name='com.mapbox.mapboxsdk.tileprovider']/class[@name='MapTileLayerBase.CacheTask']"/>
+  <remove-node path="/api/package[@name='com.mapbox.mapboxsdk.overlay']/class[@name='TilesOverlay.ZoomOutTileLooper']"/>
+
+  <attr path="/api/package[@name='com.mapbox.mapboxsdk.overlay']/class[@name='OverlayManager']/method[@name='get']" name="return">java.lang.Object</attr>
+  <attr path="/api/package[@name='com.mapbox.mapboxsdk.tileprovider.modules']/class[@name='MapTileModuleLayerBase.TileLoader']/method[@name='loadTile' and count(parameter)=1 and parameter[1][@type='com.mapbox.mapboxsdk.tileprovider.MapTileRequestState']]" name="visibility">public</attr>
+</metadata>
